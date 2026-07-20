@@ -2,7 +2,11 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    build = ":TSUpdate"
+    build = ":TSUpdate",
+    opts = {
+      ensure_installed = { "lua", "c", "cpp", "rust", "python" },
+      auto_install = true,
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -10,7 +14,7 @@ return {
     init = function()
       vim.g.no_plugin_maps = true
     end,
-    opt = {
+    opts = {
       select = {
         lookahead = true,
         selection_modes = {
@@ -62,7 +66,7 @@ return {
     },
     config = function(_, opts)
       require("treesitter-context").setup(opts)
-      vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = NONE })
+      vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "NONE" })
       vim.api.nvim_set_hl(0, 'TreesitterContextSeparator', { fg = "#222436" })
     end,
   },

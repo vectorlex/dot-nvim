@@ -16,7 +16,7 @@ return {
       "mason-org/mason.nvim",
     },
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer" },
+      ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "basedpyright" },
       automatic_installation = true,
     },
   },

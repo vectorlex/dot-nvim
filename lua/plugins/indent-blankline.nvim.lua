@@ -49,9 +49,9 @@ return {
       vim.api.nvim_set_hl(0, "RainbowCyanDark", { fg = "#508797" })
     end)
 
-    local rdtemp = vim.g.rainbow_delimiters or {}
-    rdtemp.highlight = highlight
-    vim.g.rainbow_delimiters = rdtemp
+    vim.g.rainbow_delimiters = vim.tbl_deep_extend("force", vim.g.rainbow_delimiters or {}, {
+      highlight = highlight,
+    })
 
     require("ibl").setup {
       indent = { highlight = highlight_dark },

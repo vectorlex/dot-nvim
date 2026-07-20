@@ -5,16 +5,21 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
-    explorer = { enabled = true },
     input = { enabled = true },
-    notifier = { enabled = true, timeout = 3000 },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
-    scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    image = { enabled = true },
+    terminal = {
+      enabled = true,
+      shell = "fish", -- 在这里指定使用 fish
+      win = {
+        position = "bottom",
+        height = 0.2,
+      },
+    },
   },
   keys = {
     -- 常用选择器 & 文件浏览器
@@ -63,8 +68,12 @@ return {
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "工作区符号" },
     -- 其他
     { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "下一个引用", mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "上一个引用", mode = { "n", "t" } },
+    { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "下一个引用", mode = { "n", "t" } },
+    { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "上一个引用", mode = { "n", "t" } },
+    -- 终端
+    { "<C-/>", function() Snacks.terminal.toggle() end, desc = "切换终端" },
+    { "<leader>ft", function() Snacks.terminal(nil, { win = { position = "float" } }) end, desc = "浮动终端" },
+    { "<leader>fT", function() Snacks.terminal(nil, { win = { position = "bottom", height = 0.25 } }) end, desc = "底部水平终端" },
+    { "<leader>fB", function() Snacks.terminal(nil, { win = { position = "right", width = 0.3 } }) end, desc = "右侧垂直终端" },
   },
 }
-

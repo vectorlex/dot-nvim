@@ -10,12 +10,12 @@ return {
     init = function()
       vim.g.no_plugin_maps = true
     end,
-    opt ={
+    opt = {
       select = {
         lookahead = true,
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
+          ['@function.outer'] = 'V',  -- linewise
           -- ['@class.outer'] = '<c-v>', -- blockwise
         },
         include_surrounding_whitespace = false,
@@ -33,7 +33,8 @@ return {
       { "as", function() require("nvim-treesitter-textobjects.select").select_textobject("@local.scope", "locals") end, mode = { "x", "o" }, desc = "选择作用域" },
       { "]m", function() require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个函数开始" },
       { "]]", function() require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个类开始" },
-      { "]o", function() require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个循环" },
+      { "]o", function() require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" },
+          "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个循环" },
       { "]s", function() require("nvim-treesitter-textobjects.move").goto_next_start("@local.scope", "locals") end, mode = { "n", "x", "o" }, desc = "下一个作用域" },
       { "]z", function() require("nvim-treesitter-textobjects.move").goto_next_start("@fold", "folds") end, mode = { "n", "x", "o" }, desc = "下一个折叠" },
       { "]M", function() require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个函数结束" },
@@ -51,4 +52,3 @@ return {
     opts = {},
   },
 }
-

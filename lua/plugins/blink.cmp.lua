@@ -50,4 +50,3 @@ return {
     fuzzy = { implementation = "rust" }
   },
 }
-

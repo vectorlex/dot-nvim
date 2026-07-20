@@ -31,5 +31,6 @@ opt.signcolumn = "yes"
 opt.wrap = false
 opt.showmode = false
 opt.fillchars = { eob = " " }
+opt.laststatus = 3
+opt.splitkeep = "screen"
 o.winborder = "none"
-

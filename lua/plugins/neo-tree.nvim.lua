@@ -21,9 +21,9 @@ return {
     },
     keys = {
       {
-        "<leader>e", -- 快捷键：<leader> + e
-        "<cmd>Neotree toggle<cr>", -- 执行的命令：切换Neo-tree
-        desc = "切换neo-tree" -- 描述信息（可选）
+        "<leader>e",
+        "<cmd>Neotree toggle<cr>",
+        desc = "切换neo-tree"
       },
     },
   }

@@ -14,7 +14,7 @@ return {
     image = { enabled = true },
     terminal = {
       enabled = true,
-      shell = "fish", -- 在这里指定使用 fish
+      shell = "fish",
       win = {
         position = "bottom",
         height = 0.2,

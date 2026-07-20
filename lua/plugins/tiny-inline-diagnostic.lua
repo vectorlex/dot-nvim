@@ -8,11 +8,11 @@ return {
       show_code = true,
       set_arrow_to_diag_color = true,
       multilines = {
-        enabled = true, -- 启用多行诊断消息支持
+        enabled = true,
       },
     }
   },
   init = function()
-    vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+    vim.diagnostic.config({ virtual_text = false })
   end,
 }

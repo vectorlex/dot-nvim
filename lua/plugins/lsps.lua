@@ -15,6 +15,9 @@ return {
       "neovim/nvim-lspconfig",
       "mason-org/mason.nvim",
     },
-    opts = {},
+    opts = {
+      ensure_installed = { "lua_ls", "rust_analyzer" },
+      automatic_installation = true,
+    },
   },
 }

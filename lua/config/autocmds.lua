@@ -25,3 +25,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     -- end
   end,
 })
+
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { underline = true, default = true })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { underline = true, default = true })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { underline = true, default = true })

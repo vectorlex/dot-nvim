@@ -3,6 +3,11 @@ return {
   main = "ibl",
   ---@module "ibl"
   ---@type ibl.config
+
+  dependencies = {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
+
   config = function()
     local highlight = {
       "RainbowRed",

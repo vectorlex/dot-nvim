@@ -12,6 +12,15 @@ return {
     ---@type Neominimap.UserConfig
     vim.g.neominimap = {
       auto_enable = true,
+      float = {
+        window_border = "none",
+      },
+      diagnostic = {
+        mode = "sign",
+      },
+      click = {
+        enabled = true,
+      },
     }
   end,
 }

@@ -2,6 +2,7 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {
+    preset = "helix",
     spec = {
       { "<C-w>", group = "窗口操作" },
       { "<C-w>v", desc = "垂直分割窗口" },

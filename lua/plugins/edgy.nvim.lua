@@ -2,13 +2,11 @@ return {
   "folke/edgy.nvim",
   opts = {
     left = {
-      { ft = "neo-tree" },
+      { ft = "NvimTree", size = { width = 30 } },
+      { ft = "aerial",   size = { width = 30 } },
     },
     bottom = {
       { ft = "terminal", size = 13 },
-    },
-    right = {
-      { ft = "aerial" },
     },
     options = {
       bottom = { size = 13 },

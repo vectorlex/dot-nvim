@@ -22,7 +22,7 @@ return {
     },
   },
   keys = {
-    -- 常用选择器 & 文件浏览器
+    -- 常用选择器
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "智能查找文件" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "缓冲区列表" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "文本搜索" },

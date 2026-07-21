@@ -36,7 +36,6 @@ return {
       { "ic", function() require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects") end, mode = { "x", "o" }, desc = "选择类内部" },
       { "as", function() require("nvim-treesitter-textobjects.select").select_textobject("@local.scope", "locals") end, mode = { "x", "o" }, desc = "选择作用域" },
       { "]m", function() require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个函数开始" },
-      { "]]", function() require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个类开始" },
       {
         "]o",
         function()
@@ -51,7 +50,6 @@ return {
       { "]M", function() require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个函数结束" },
       { "][", function() require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个类结束" },
       { "[m", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "上一个函数开始" },
-      { "[[", function() require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "上一个类开始" },
       { "[M", function() require("nvim-treesitter-textobjects.move").goto_previous_end("@function.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "上一个函数结束" },
       { "[]", function() require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "上一个类结束" },
       { "]d", function() require("nvim-treesitter-textobjects.move").goto_next("@conditional.outer", "textobjects") end, mode = { "n", "x", "o" }, desc = "下一个条件" },
@@ -61,13 +59,12 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     opts = {
+      mode = "topline",
       max_lines = 13,
-      separator = '‾'
     },
     config = function(_, opts)
       require("treesitter-context").setup(opts)
       vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "NONE" })
-      vim.api.nvim_set_hl(0, 'TreesitterContextSeparator', { fg = "#222436" })
     end,
   },
 }

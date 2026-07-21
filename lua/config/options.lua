@@ -4,6 +4,7 @@ local o = vim.o
 -- 基础
 --
 opt.number = true
+opt.relativenumber = true
 
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -16,13 +17,6 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
-
-opt.undofile = true
-
-opt.clipboard = "unnamedplus"
-
 -- UI
 --
 opt.termguicolors = true
@@ -33,4 +27,12 @@ opt.showmode = false
 opt.fillchars = { eob = " " }
 opt.laststatus = 3
 opt.splitkeep = "screen"
-o.winborder = "none"
+o.winborder = "rounded"
+
+--Others
+--
+vim.diagnostic.config({ signs = false })
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+opt.undofile = true
+opt.clipboard = "unnamedplus"

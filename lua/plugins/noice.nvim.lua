@@ -3,7 +3,12 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        stages = "no_animation",
+      }
+    },
   },
   opts = {
     cmdline = {
@@ -18,14 +23,8 @@ return {
       command_palette = true,
       long_message_to_split = true,
     },
-    messages = {
-      view = "mini",
-    },
     lsp = {
       progress = {
-        view = "mini",
-      },
-      message = {
         view = "mini",
       },
     },
